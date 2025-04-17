@@ -4,39 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Supernova - Game Details</title>
+  <link rel="icon" type="image/png" href="psps.png">
   <style>
-    body {
-      background-color: #111827;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    header, footer {
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background-color: #0d1b2a;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #0d1b2a;
+      z-index: 10;
+    }
+
+    .branding h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .branding h4 {
+      text-align: left;
+      font-size: 1em;
+      margin: 6px 0 0 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
       text-align: center;
-      margin-bottom: 40px;
     }
 
     h1 {
       font-size: 2.5em;
+      margin-bottom: 10px;
     }
 
-    .content {
-      max-width: 700px;
-      margin: auto;
+    header p {
+      color: #9ca3af;
+      font-size: 1.1em;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    /* Card styles matching About Me */
+    .card {
+      background-color: rgb(31, 41, 55);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .card p {
+      text-align: justify;
+      text-align-last: center;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .image-container {
       text-align: center;
-      margin-bottom: 30px;
+      margin: 30px 0;
     }
 
     .image-container img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
     .caption {
@@ -46,15 +114,13 @@
     }
 
     .back-button {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
-      padding: 10px 20px;
+      display: inline-block;
+      margin: 40px auto 20px;
+      padding: 12px 24px;
       background-color: #1f2937;
       color: #ffffff;
       border: 2px solid #ffffff;
       border-radius: 8px;
-      text-align: center;
       text-decoration: none;
       font-size: 1em;
       transition: background-color 0.3s, color 0.3s;
@@ -65,64 +131,143 @@
       color: #1f2937;
     }
 
-    p {
-      text-align: justify;
-      text-align-last: center;   /* centers the last line */
-      margin: 0 auto;
-      max-width: 700px;
-      line-height: 1.5; 
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: #0d1b2a;
     }
 
     footer p {
-      font-size: 0.9em;
+      margin: 10px 0 5px;
+    }
+
+    footer a {
+      margin: 0 10px;
       color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Video Section Styling */
+    .video-container {
+      display: flex;
+      flex-direction: column; /* Stack video and caption vertically */
+      justify-content: center;
+      align-items: center;
+      max-width: 1000px; /* Match card's width */
+      margin: 30px auto; /* Align with the card */
+    }
+
+    video {
+      width: 100%;
+      max-width: 1000px; /* Ensure video takes the full width of the container */
+      border-radius: 10px;
+    }
+
+    .caption {
+      margin-top: 12px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .branding {
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      video {
+        width: 100%;
+        max-height: 500px;
+        border-radius: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Supernova</h1>
-    <p>Explore space, discover stars, and learn while playing!</p>
+  <header class="site-header">
+    <div class="branding">
+      <h1>Aseel Alshahrani</h1>
+      <h4>Game Developer</h4>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
   </header>
 
   <div class="content">
-    <p>
-      During my studies, I had the opportunity to collaborate with a team to develop an educational video game as part of our graphic design project. 
-      <br>
-      <br>
-      The game, titled "Supernova", follows the journey of an astronaut attempting to reach the moon. As players navigate through the game, they encounter various challenges that they must overcome to progress towards their goal. 
-      "Supernova" aims to educate players about space exploration and the perseverance required to achieve ambitious goals. The game was designed with captivating visuals and engaging gameplay mechanics to ensure that players not only enjoy the experience but also learn from it. "Supernova" represents our dedication to creativity, innovation, and the use of technology for educational purposes.
-      <br>
-      <br>
-    </p>
+    <h1>Supernova</h1>
+    <p>Explore space, discover stars, and learn while playing!</p>
 
-    <div class="image-container">
-      <img src="astronaut-design.jpg" alt="Astronaut Design" />
-      <div class="caption">Astronaut character I designed👩🏻‍🚀</div>
+    <div class="card">
+      <p>
+        During my studies, I had the opportunity to collaborate with a team to develop an educational video game as part of our graphic design project.
+        <br><br>
+        The game, titled &quot;Supernova&quot;, follows the journey of an astronaut attempting to reach the moon. As players navigate through the game, they encounter various challenges they must overcome to progress towards their goal.
+        <br><br>
+        &quot;Supernova&quot; aims to educate players about space exploration and the perseverance required to achieve ambitious goals. The game was designed with captivating visuals and engaging gameplay mechanics to ensure that players not only enjoy the experience but also learn from it. It represents our dedication to creativity, innovation, and the use of technology for educational purposes.
+      </p>
+    </div>
+
+    <!-- Video Section outside the card but matching its width -->
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="supernova.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">Supernova Game Trailer 🎮</div>
     </div>
 
     <div class="image-container">
       <img src="desert-scene.jpg" alt="Desert Scene" />
-      <div class="caption">Desert I designed🏜</div>
+      <div class="caption">Desert I designed 🏜</div>
+    </div>
+
+    <div class="image-container">
+      <img src="astronaut-design.jpg" alt="Astronaut Design" />
+      <div class="caption">Astronaut character I designed 👩🏻‍🚀</div>
     </div>
 
     <div class="image-container">
       <img src="astronaut-fail1.jpg" alt="Failed Astronaut Design 1" />
-      <div class="caption">First failed astronaut design attempt😂</div>
+      <div class="caption">First failed astronaut design attempt 😂</div>
     </div>
 
     <div class="image-container">
       <img src="astronaut-fail2.jpg" alt="Failed Astronaut Design 2" />
-      <div class="caption">Second failed astronaut design attempt😂</div>
+      <div class="caption">Second failed astronaut design attempt 😂</div>
     </div>
 
-    <!-- Button to go back -->
     <a href="index.html" class="back-button">← Back to Portfolio</a>
   </div>
 
   <footer>
     <p>© 2025 Aseel Alshahrani</p>
+    <a href="https://x.com/DeveloperAseel" target="_blank">X</a>
+    <a href="https://instagram.com/DeveloperAseel" target="_blank">Instagram</a>
+    <a href="mailto:Aseel.Alshahrani@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/AseelAlshahrani" target="_blank">LinkedIn</a>
+    <a href="tel:+966564738987">Phone</a>
   </footer>
 
 </body>
