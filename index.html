@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aseel Alshahrani - Game Developer</title>
+  <link rel="icon" type="image/png" href="psps.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background-color: #0d1b2a;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-color: #0d1b2a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      z-index: 2;
+      background-color: transparent;
+    }
+
+    .branding h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .branding h4 {
+      text-align: left;
+      font-size: 1em;
+      margin: 6px 0 0 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero-title {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .about, .projects {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .resume-button {
+      margin-top: 10px;
+      background-color: #4b5563;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .resume-button:hover {
+      background-color: #6b7280;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 30px;
+      justify-items: center;
+    }
+
+    .card {
+      background-color: rgb(31, 41, 55);
+      padding: 16px;
+      border-radius: 12px;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .grid:hover:has(.card:hover) .card:not(:hover) {
+      filter: blur(1px);
+      opacity: 0.5;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    .about-card {
+      grid-column: 1 / -1; /* Span full width of the grid */
+      background-color: rgb(31, 41, 55);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .about-card {
+        grid-column: span 1;
+      }
+    }
+
+    video {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 10px;
+    }
+
+    .description {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 10px 0 5px;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .branding {
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .hero-title {
+        font-size: 2em;
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <header class="site-header">
+      <div class="branding">
+        <h1>Aseel Alshahrani</h1>
+        <h4>Game Developer</h4>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to My World of Games</h1>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="grid">
+      <div class="card about-card">
+        <!--<p>I am passionate about creating immersive and fun video games. This portfolio showcases my top three game projects built with creativity and code.</p>-->
+        <p>They call me Leesa🧚</p>
+        <p>Digital warrior by code⚔️...Dreamer at heart💗</p>
+        <p>I’m a creative and technically skilled Computer Science graduate, driven by a passion to bring my imagination to life through the art of game development. I also find joy in expressing myself through designing, writing, and storytelling. I’m eager to join a forward-thinking game studio where I can contribute my skills and passion to the future of interactive gameplay.</p>
+        <p>Welcome to my battlefield⚔️—thanks for stopping by💗!</p>
+        <a href="AseelAlshahraniCV.pdf" class="resume-button" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="supernova.html" style="text-decoration: none; color: inherit;">
+          <h3>Supernova</h3>
+          <video src="supernova.mp4" autoplay muted loop></video>
+          <p class="description">An educational game where an astronaut explores stars and learns about space.</p>
+        </a>
+      </div>
+      <div class="card">
+        <h3>Space Invader</h3>
+        <video src="space-invader.mp4" autoplay muted loop></video>
+        <p class="description">A fast-paced arcade game where the player fights waves of space invaders.</p>
+      </div>
+      <div class="card">
+        <h3>Keyscape</h3>
+        <video src="keyscape.mp4" autoplay muted loop></video>
+        <p class="description">A runner game where the player collects a key and avoids enemies to escape.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 Aseel Alshahrani</p>
+    <a href="https://x.com/DeveloperAseel" target="_blank">X</a>
+    <a href="https://instagram.com/DeveloperAseel" target="_blank">Instagram</a>
+    <a href="mailto:Aseel.Alshahrani@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/AseelAlshahrani" target="_blank">LinkedIn</a>
+    <a href="tel:+966564738987">Phone</a>
+  </footer>
+
+</body>
+</html>
