@@ -20,53 +20,6 @@
       background-color: #0d1b2a;
     }
 
-    .site-header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      background-color: #0d1b2a;
-      z-index: 20;
-      background-color: transparent;
-      left: 0;
-    }
-
-    .branding h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-
-    .branding h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-top: 30px;
-    }
-
-    .branding h4 {
-      text-align: center;
-      font-size: 1em;
-      margin: 6px 0 0 0;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links a {
-      color: #ccc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
     .content {
       max-width: 1000px;
       margin: 40px auto;
@@ -79,17 +32,13 @@
       margin-bottom: 10px;
     }
 
-    header p {
+    p {
       color: #9ca3af;
       font-size: 1.1em;
       margin-top: 0;
       margin-bottom: 30px;
     }
- 
-    .branding h1 {
-      font-size: 2em;
-      margin: 0;
-    }
+
     /* Card styles matching About Me */
     .card {
       background-color: rgb(31, 41, 55);
@@ -167,41 +116,20 @@
     /* Video Section Styling */
     .video-container {
       display: flex;
-      flex-direction: column; /* Stack video and caption vertically */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      max-width: 1000px; /* Match card's width */
-      margin: 30px auto; /* Align with the card */
+      max-width: 1000px;
+      margin: 30px auto;
     }
 
     video {
       width: 100%;
-      max-width: 1000px; /* Ensure video takes the full width of the container */
+      max-width: 1000px;
       border-radius: 10px;
     }
 
-    .caption {
-      margin-top: 12px;
-      font-style: italic;
-      text-align: center;
-    }
-
     @media (max-width: 768px) {
-      .site-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .branding {
-        margin-bottom: 10px;
-      }
-
-      .nav-links {
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-
       h1 {
         font-size: 2em;
       }
@@ -216,20 +144,8 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="branding">
-      <h1>Aseel Alshahrani</h1>
-      <h4>Game Developer</h4>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-
   <div class="content">
-    <h2>Supernova</h2>
+    <h1>Supernova</h1>
     <p>Explore space, discover stars, and learn while playing!</p>
 
     <div class="card">
@@ -242,7 +158,6 @@
       </p>
     </div>
 
-    <!-- Video Section outside the card but matching its width -->
     <div class="video-container">
       <video controls autoplay muted>
         <source src="supernova.mp4" type="video/mp4">
