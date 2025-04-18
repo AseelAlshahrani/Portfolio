@@ -95,6 +95,12 @@
       justify-items: center;
     }
 
+    .card-container:hover .card:not(:hover) {
+      filter: blur(1px);
+      opacity: 0.5;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
     .card {
       background-color: rgb(31, 41, 55);
       padding: 16px;
@@ -107,12 +113,6 @@
 
     .card:hover {
       transform: scale(1.05);
-    }
-
-    .grid:hover:has(.card:hover) .card:not(:hover) {
-      filter: blur(1px);
-      opacity: 0.5;
-      transition: filter 0.3s ease, opacity 0.3s ease;
     }
 
     .about-card {
@@ -228,7 +228,7 @@
 
   <section id="projects" class="projects">
     <h2>My Projects</h2>
-    <div class="grid">
+    <div class="card-container grid">
       <div class="card">
         <a href="supernova.html" style="text-decoration: none; color: inherit;">
           <h3>Supernova</h3>
