@@ -152,12 +152,59 @@
     footer a:hover {
       color: white;
     }
+
+    .card {
+      background-color: rgb(31, 41, 55);
+      padding: 16px;
+      border-radius: 12px;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .about-card {
+      grid-column: 1 / -1; /* Span full width of the grid */
+      background-color: rgb(31, 41, 55);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-card {
+        grid-column: span 1;
+      }
+    }
+
+    .container h3 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .about-card p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
   </style>
 </head>
 <body>
 
   <div class="container">
     <h1>Keyscape Game Objects</h1>
+    
+    <div class="card about-card">
+        <h3>About The Game</h3>
+        <p>In this 2D adventure game, you control Leesa, a character navigating through various levels. The objective is to avoid enemies, collect keys, and unlock doors to progress through the game. Each level presents new challenges and obstacles, making it a thrilling journey filled with strategy and quick reflexes.</p>
+    </div>
 
     <div class="object-row">
       <img src="LisaChar.png" alt="Lisa Character" class="square-img" />
