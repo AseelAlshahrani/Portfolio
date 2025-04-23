@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space Invader</title>
+  <title>Keyscape - Game Objects</title>
   <link rel="icon" type="image/png" href="psps.png" />
 
   <style>
@@ -38,11 +38,10 @@
 
     .object-row {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      align-items: stretch;
+      gap: 40px;
       margin-top: 30px;
+      flex-wrap: nowrap;
     }
 
     .square-img {
@@ -61,7 +60,6 @@
       border-radius: 10px;
       flex-grow: 1;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      width: calc(100% - 120px); /* Adjusted to prevent shrinking */
     }
 
     .description-box h2 {
@@ -78,7 +76,7 @@
     .back-button {
       display: block;
       width: fit-content;
-      margin: 30px auto 10px;
+      margin: 20px auto;
       padding: 12px 24px;
       background-color: #1f2937;
       color: #ffffff;
@@ -103,33 +101,28 @@
       transform: scale(1.05);
     }
 
+    .object-row:hover:has(.square-img:hover) .square-img:not(:hover) {
+      filter: blur(1px);
+      opacity: 0.5;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
     @media (max-width: 768px) {
       .object-row {
-        justify-content: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        gap: 20px;
       }
 
       .square-img {
         width: 80px;
-        height: 80px;
       }
 
       .description-box {
-        width: calc(100% - 100px); /* Adjusted to prevent shrinking */
-        margin-left: 10px;
-      }
-
-      .container {
-        padding: 15px;
+        font-size: 0.9em;
       }
 
       h1 {
         font-size: 2em;
-      }
-
-      .back-button {
-        font-size: 0.9em;
-        padding: 10px 20px;
       }
     }
 
@@ -163,6 +156,7 @@
       width: 100%;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
+      margin: 0 auto;
     }
 
     .card:hover {
@@ -170,6 +164,7 @@
     }
 
     .about-card {
+      grid-column: 1 / -1;
       background-color: rgb(31, 41, 55);
       padding: 30px;
       border-radius: 12px;
@@ -177,12 +172,7 @@
       max-width: 1000px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .about-card {
-        padding: 20px;
-      }
+      margin-bottom: 30px;
     }
 
     .container h3 {
