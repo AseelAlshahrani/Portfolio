@@ -1,3 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keyscape Game</title>
+  <link rel="icon" type="image/png" href="psps.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d1b2a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .object-row {
+      display: flex;
+      align-items: stretch;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: nowrap;
+    }
+
+    .square-img {
+      width: 100px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+
+    .description-box {
+      background-color: rgb(31, 41, 55);
+      padding: 20px;
+      border-radius: 10px;
+      flex-grow: 1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .description-box h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .description-box p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #1f2937;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #ffffff;
+      color: #1f2937;
+    }
+
+    .description-box:hover {
+      transform: scale(1.05);
+    }
+
+    .square-img:hover {
+      transform: scale(1.05);
+    }
+
+    .object-row:hover:has(.square-img:hover) .square-img:not(:hover) {
+      filter: blur(1px);
+      opacity: 0.5;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .object-row {
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .square-img {
+        width: 80px;
+      }
+
+      .description-box {
+        font-size: 0.9em;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 10px 0 6px;
+      font-weight: normal;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .card {
+      background-color: rgb(31, 41, 55);
+      padding: 16px;
+      border-radius: 12px;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      margin: 0 auto;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .about-card {
+      grid-column: 1 / -1;
+      background-color: rgb(31, 41, 55);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container h3 {
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .about-card p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Keyscape Game Objects</h1>
+    
+    <div class="card about-card">
+      <h3>About The Game</h3>
+      <p>In this 2D adventure game, you control Leesa, a character navigating through various levels. The objective is to avoid enemies, collect keys, and unlock doors to progress through the game. Each level presents new challenges and obstacles, making it a thrilling journey filled with strategy and quick reflexes.</p>
+    </div>
+
+    <div class="object-row">
+      <img src="LisaChar.png" alt="Lisa Character" class="square-img" />
+      <div class="description-box">
+        <h2>Lisa Character</h2>
+        <p>Your main playable character. She's fast, smart, and must navigate through challenges to collect the key and reach the door.</p>
+      </div>
+    </div>
+
+    <div class="object-row">
+      <img src="Key.png" alt="Key Object" class="square-img" />
+      <div class="description-box">
+        <h2>Key</h2>
+        <p>The objective of each level. Lisa must collect this key to unlock the door and win the level.</p>
+      </div>
+    </div>
+
+    <div class="object-row">
+      <img src="Door.png" alt="Door Object" class="square-img" />
+      <div class="description-box">
+        <h2>Door</h2>
+        <p>Found at the end of each level. Once the key is collected, the door opens to allow Lisa to escape.</p>
+      </div>
+    </div>
+
+    <div class="object-row">
+      <img src="BirdChar.png" alt="Bird Character" class="square-img" />
+      <div class="description-box">
+        <h2>Enemy Bird</h2>
+        <p>Flies across the scene to try and stop Lisa. Colliding with this enemy resets the game.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+  </div>
+
+  <footer id="contact">
+    <p>© 2025 Aseel Alshahrani</p>
+    <a href="https://x.com/DeveloperAseel" target="_blank">X</a>
+    <a href="https://instagram.com/DeveloperAseel" target="_blank">Instagram</a>
+    <a href="mailto:Aseel.Alshahrani@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/AseelAlshahrani" target="_blank">LinkedIn</a>
+    <a href="tel:+966564738987">Phone</a>
+  </footer>
+
+</body>
+</html>
 <!--<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,247 +497,3 @@
 </body>
 </html>
 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keyscape - Game Objects</title>
-  <link rel="icon" type="image/png" href="psps.png" />
-
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1b2a;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      flex: 1;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .object-row {
-      display: flex;
-      align-items: stretch;
-      gap: 40px;
-      margin-top: 30px;
-      flex-wrap: nowrap;
-    }
-
-    .square-img {
-      width: 100px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      align-self: stretch;
-      flex-shrink: 0;
-    }
-
-    .description-box {
-      background-color: rgb(31, 41, 55);
-      padding: 20px;
-      border-radius: 10px;
-      flex-grow: 1;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .description-box h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.5em;
-    }
-
-    .description-box p {
-      color: #9ca3af;
-      line-height: 1.6;
-    }
-
-    .back-button {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      padding: 12px 24px;
-      background-color: #1f2937;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s, color 0.3s;
-      text-align: center;
-    }
-
-    .back-button:hover {
-      background-color: #ffffff;
-      color: #1f2937;
-    }
-
-    .description-box:hover {
-      transform: scale(1.05);
-    }
-
-    .square-img:hover {
-      transform: scale(1.05);
-    }
-
-    .object-row:hover:has(.square-img:hover) .square-img:not(:hover) {
-      filter: blur(1px);
-      opacity: 0.5;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .object-row {
-        flex-direction: row;
-        gap: 20px;
-      }
-
-      .square-img {
-        width: 80px;
-      }
-
-      .description-box {
-        font-size: 0.9em;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 5px;
-      margin-bottom: 20px;
-      padding: 20px;
-    }
-
-    footer p {
-      margin: 10px 0 6px;
-      font-weight: normal;
-    }
-
-    footer a {
-      margin: 0 10px;
-      color: #9ca3af;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .card {
-      background-color: rgb(31, 41, 55);
-      padding: 16px;
-      border-radius: 12px;
-      max-width: 300px;
-      width: 100%;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      margin: 0 auto;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .about-card {
-      grid-column: 1 / -1;
-      background-color: rgb(31, 41, 55);
-      padding: 30px;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 1000px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .container h3 {
-      font-size: 1.5em;
-      text-align: center;
-    }
-
-    .about-card p {
-      color: #9ca3af;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h1>Keyscape Game Objects</h1>
-    
-    <div class="card about-card">
-      <h3>About The Game</h3>
-      <p>In this 2D adventure game, you control Leesa, a character navigating through various levels. The objective is to avoid enemies, collect keys, and unlock doors to progress through the game. Each level presents new challenges and obstacles, making it a thrilling journey filled with strategy and quick reflexes.</p>
-    </div>
-
-    <div class="object-row">
-      <img src="LisaChar.png" alt="Lisa Character" class="square-img" />
-      <div class="description-box">
-        <h2>Lisa Character</h2>
-        <p>Your main playable character. She's fast, smart, and must navigate through challenges to collect the key and reach the door.</p>
-      </div>
-    </div>
-
-    <div class="object-row">
-      <img src="Key.png" alt="Key Object" class="square-img" />
-      <div class="description-box">
-        <h2>Key</h2>
-        <p>The objective of each level. Lisa must collect this key to unlock the door and win the level.</p>
-      </div>
-    </div>
-
-    <div class="object-row">
-      <img src="Door.png" alt="Door Object" class="square-img" />
-      <div class="description-box">
-        <h2>Door</h2>
-        <p>Found at the end of each level. Once the key is collected, the door opens to allow Lisa to escape.</p>
-      </div>
-    </div>
-
-    <div class="object-row">
-      <img src="BirdChar.png" alt="Bird Character" class="square-img" />
-      <div class="description-box">
-        <h2>Enemy Bird</h2>
-        <p>Flies across the scene to try and stop Lisa. Colliding with this enemy resets the game.</p>
-      </div>
-    </div>
-
-    <a href="index.html" class="back-button">← Back to Portfolio</a>
-  </div>
-
-  <footer id="contact">
-    <p>© 2025 Aseel Alshahrani</p>
-    <a href="https://x.com/DeveloperAseel" target="_blank">X</a>
-    <a href="https://instagram.com/DeveloperAseel" target="_blank">Instagram</a>
-    <a href="mailto:Aseel.Alshahrani@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/AseelAlshahrani" target="_blank">LinkedIn</a>
-    <a href="tel:+966564738987">Phone</a>
-  </footer>
-
-</body>
-</html>
