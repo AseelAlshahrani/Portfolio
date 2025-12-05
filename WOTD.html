@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whispers of the Dunes - Game Details</title>
+  <link rel="icon" type="image/png" href="psps.png">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      background-color: #0d1b2a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #9ca3af;
+      font-size: 1.1em;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    /* Card styles matching About Me */
+    .card {
+      background-color: rgb(31, 41, 55);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .card p {
+      text-align: justify;
+      text-align-last: center;
+      line-height: 1.6;
+      margin: 0;
+      color: white;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .caption {
+      color: #9ca3af;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 40px auto 20px;
+      padding: 12px 24px;
+      background-color: #1f2937;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #ffffff;
+      color: #1f2937;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 10px 0 6px;
+      color: white;
+      font-size: 1em;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Video Section Styling */
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    video {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      /* h1 {
+        font-size: 2em;
+      } */
+
+      video {
+        width: 100%;
+        max-height: 500px;
+        border-radius: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Whispers of the Dunes</h1>
+    <p>Every gate holds a world… and every world whispers a secret.</p>
+
+    <div class="card">
+      <p>
+        Whispers of the Dunes is a 3D adventure game set deep within a mysterious desert, where an explorer becomes lost after a sudden sandstorm. As she searches for a way out, she stumbles upon an ancient structure hidden beneath the dunes—home to several strange gates, each leading to a completely different world.
+        <br><br>
+        Gameplay focuses on exploration, interaction, and environmental storytelling. The player must interpret the world around them, interact with objects, and complete small tasks to activate the gates and move forward. UI elements, hints, and widgets help guide the player while keeping the experience immersive.
+        <br><br>
+        The game was built in Unreal Engine 5, using Blueprints for all gameplay systems, including gate activation, puzzle logic, player movement, UI behavior, and environment interactions.
+      </p>
+    </div>
+
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="WOTDVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="caption">Whispers of the Dunes Game Trailer 🎮</div>
+    </div>
+
+    <div class="image-container">
+      <img src="desert-scene.jpg" alt="Desert Scene" />
+      <div class="caption">Desert I designed 🏜</div>
+    </div>
+
+    <div class="image-container">
+      <img src="astronaut-design.jpg" alt="Astronaut Design" />
+      <div class="caption">Astronaut character I designed 👩🏻‍🚀</div>
+    </div>
+
+    <div class="image-container">
+      <img src="astronaut-fail1.jpg" alt="Failed Astronaut Design 1" />
+      <div class="caption">First failed astronaut design attempt 😂</div>
+    </div>
+
+    <div class="image-container">
+      <img src="astronaut-fail2.jpg" alt="Failed Astronaut Design 2" />
+      <div class="caption">Second failed astronaut design attempt 😂</div>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Aseel Alshahrani</p>
+    <a href="https://x.com/DeveloperAseel" target="_blank">X</a>
+    <a href="https://instagram.com/DeveloperAseel" target="_blank">Instagram</a>
+    <a href="mailto:Aseel.Alshahrani@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/AseelAlshahrani" target="_blank">LinkedIn</a>
+    <a href="tel:+966564738987">Phone</a>
+  </footer>
+
+</body>
+</html>
